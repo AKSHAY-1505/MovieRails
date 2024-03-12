@@ -1,0 +1,16 @@
+<h1>Add a New Movie</h1>
+
+<%= form_with model:@movie,url:"/add",method:"Post" do |form| %>
+     <%= form.label :name, "Movie Name:" %>
+     <%= form.text_field:name %>
+     <%= form.label :name, "Director Name:" %>
+     <%= form.text_field:director %>
+     <%= form.label :name, "Cast Name:" %>
+     <%= form.text_field:cast %>
+     <%= form.label :name, "Langauge:" %>
+     <%= form.text_field:language %>
+     <%= form.label :name, "Cover URL:" %>
+     <%= form.text_field:cover %>
+     <%= form.submit "Add Movie" %>
+<% end %>
+

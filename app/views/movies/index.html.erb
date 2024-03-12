@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>MovieRulz</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/index.css" />
+  </head>
+  <body>
+    <h1>Movies</h1>
+    <div class="container-fluid main-container">
+        <% @movies.each do |movie| %>
+            <div class="movie-container">
+                <%= image_tag movie.cover,height:200,width:150 %>
+                <h3><%= movie.name %></h3>
+                <p><strong>Director: </strong><%= movie.director %></p>
+                <p><strong>Cast: </strong><%= movie.cast %></p>
+                <p><strong>Language: </strong><%= movie.language %></p>
+                <%= button_to "Delete","/delete/#{movie.id}",method: :delete,class: "btn btn-danger mb-2" %>
+                <%= button_to "Update","/update/#{movie.id}",method: :put,class: "btn btn-success" %>
+            </div>
+        <% end %>
+    </div>
+  </body>
+</html>
