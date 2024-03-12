@@ -1,0 +1,39 @@
+<html>
+     <head>
+          <link rel="stylesheet" href="../../assets/stylesheets/forms.css">
+     </head>
+     <body>
+        <h1>Edit Movie</h1>
+        <div class="form-container">
+            <%= form_with model: @movie, method: :patch, url: "/update/#{@movie.id}",class: "my-from" do |form| %>
+                <div class="input-container">
+                    <%= form.label :name, "Movie Name:" %>
+                    <%= form.text_field :name %>
+                </div>
+                <div class="input-container">
+                    <%= form.label :director, "Director Name:" %>
+                    <%= form.text_field :director %>
+                </div>
+
+                <div class="input-container">
+                    <%= form.label :cast, "Cast Name:" %>
+                    <%= form.text_field :cast %>
+                </div>
+
+                <div class="input-container">
+                    <%= form.label :language, "Language:" %>
+                    <%= form.text_field :language %>
+                </div>
+
+                <div class="input-container">
+                    <%= form.label :cover, "Cover URL:" %>
+                    <%= form.text_field :cover %>
+                </div>
+
+                <div class="input-container">
+                    <%= form.submit "Update Movie",class: "btn btn-success" %>
+                </div>
+            <% end %>
+        </div>
+     </body>
+</html>

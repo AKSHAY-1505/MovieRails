@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 78%, rgba(252,176,69,1) 100%);
+}
+
+.navbar-item:hover,
+.navbar-nav .nav-link:hover {
+    background: linear-gradient(to right, #ff00cc, #3333ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+

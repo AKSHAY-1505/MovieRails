@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   delete "/delete/:id" => "movies#destroy"
-  put "/update/:id" => "movies#update"
+
+  get "/edit/:id" => "movies#edit"
+  patch "/update/:id" => "movies#update"
 
   get "/about" => "movies#about"
 

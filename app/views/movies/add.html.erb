@@ -1,16 +1,40 @@
-<h1>Add a New Movie</h1>
+<html>
+     <head>
+          <link rel="stylesheet" href="../../assets/stylesheets/forms.css">
+     </head>
+     <body>
+          <h1>Add a New Movie</h1>
+          <div class="form-container">
+               <%= form_with model:@movie,url:"/add",method:"Post",class: "my-form" do |form| %>
+                    <div class="input-container">
+                    <%= form.label :name, "Movie Name:" %>
+                    <%= form.text_field:name %>
+                    </div>
 
-<%= form_with model:@movie,url:"/add",method:"Post" do |form| %>
-     <%= form.label :name, "Movie Name:" %>
-     <%= form.text_field:name %>
-     <%= form.label :name, "Director Name:" %>
-     <%= form.text_field:director %>
-     <%= form.label :name, "Cast Name:" %>
-     <%= form.text_field:cast %>
-     <%= form.label :name, "Langauge:" %>
-     <%= form.text_field:language %>
-     <%= form.label :name, "Cover URL:" %>
-     <%= form.text_field:cover %>
-     <%= form.submit "Add Movie" %>
-<% end %>
+                    <div class="input-container">
+                    <%= form.label :name, "Director Name:" %>
+                    <%= form.text_field:director %>
+                    </div>
+                    
+                    <div class="input-container">
+                    <%= form.label :name, "Cast Name:" %>
+                    <%= form.text_field:cast %>
+                    </div>
 
+                    <div class="input-container">
+                    <%= form.label :name, "Langauge:" %>
+                    <%= form.text_field:language %>
+                    </div>
+
+                    <div class="input-container">
+                    <%= form.label :name, "Cover URL:" %>
+                    <%= form.text_field:cover %>
+                    </div>
+
+                    <div class="input-container">
+                    <%= form.submit "Add Movie",class: "btn btn-success" %>
+                    </div>
+               <% end %>
+          </div>
+     </body>
+</html>

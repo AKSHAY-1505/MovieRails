@@ -19,9 +19,17 @@ class MoviesController < ApplicationController
     def about
     end
 
+    def edit
+        @movie = Movie.find(params[:id])
+    end
+
     def update
         @movie = Movie.find(params[:id])
-        Rails.logger.info akshay_params
+        if @movie.update(akshay_params)
+            redirect_to "/"
+        else    
+            redirect_to "/edit/#{params[:id]}"
+        end
     end
 
     def destroy
