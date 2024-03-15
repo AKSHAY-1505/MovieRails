@@ -14,17 +14,28 @@
  *= require_self
  */
 
- body {
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 78%, rgba(252,176,69,1) 100%);
+body {
+  background: rgb(105, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(105, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 63%
+  );
+
+  background-size: cover; /* This ensures the background covers the entire screen */
+  background-repeat: no-repeat; /* This prevents the background from repeating */
+  background-attachment: fixed; /* This makes the background fixed, so it doesn't scroll with the content */
+  height: 100vh; /* This ensures the body takes up the full viewport height */
+  margin: 0;
 }
 
 .navbar-item:hover,
 .navbar-nav .nav-link:hover {
-    background: linear-gradient(to right, #ff00cc, #3333ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  color: rgba(162, 0, 0, 1);
 }
 
-
+* {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}

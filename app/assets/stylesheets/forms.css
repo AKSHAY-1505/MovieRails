@@ -1,29 +1,31 @@
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 }
 
 .my-form {
-   border: 2px solid;
-   border-radius: 15px;
-   background-color: rgba(0,0,0,0.2);
-   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border: 2px solid;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  width: 25vw;
 }
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
 }
 
 h1 {
-    margin: 15px;
+  margin: 15px;
 }
 
 label {
-    font-weight: bold;
-    color: black;
+  font-weight: bold;
+  color: white;
 }

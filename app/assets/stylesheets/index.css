@@ -7,17 +7,15 @@
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
-  background-color: rgba(0,0,0,0.2);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: rgba(105, 0, 0, 1);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   color: white;
-
 }
 
 .movie-container img {
   width: 100%;
 }
-
-
 
 .main-container {
   display: flex;
@@ -27,3 +25,6 @@ button {
   border: 0px solid;
 }
 
+h1 {
+  color: white;
+}
