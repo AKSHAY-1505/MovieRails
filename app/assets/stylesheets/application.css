@@ -15,12 +15,16 @@
  */
 
 body {
-  background: rgb(105, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(105, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 63%
-  );
+    /* background: rgb(105, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(105, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 63%
+    ); */
+
+  background-color: #004d79;
+  background-image: linear-gradient(147deg, #004d79 5%, #011f41 45%, #4e1539 79%);
+
 
   background-size: cover; /* This ensures the background covers the entire screen */
   background-repeat: no-repeat; /* This prevents the background from repeating */
@@ -31,11 +35,96 @@ body {
 
 .navbar-item:hover,
 .navbar-nav .nav-link:hover {
-  color: rgba(162, 0, 0, 1);
+  color:#9c2c73;
 }
 
 * {
   font-family: "Rajdhani", sans-serif;
-  font-weight: 300;
+  font-weight: 1000;
   font-style: normal;
+  color: white;
+}
+
+.form-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.my-form {
+  border: 0;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  width: 25vw;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+}
+
+.input-container input {
+  color: black;
+}
+
+h1 {
+  margin: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: white;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;  
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  /* background-color: rgba(105, 0, 0, 1); */
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  color: white;
+}
+
+.movie-container img {
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+}
+
+button {
+  border: 0px solid;
+}
+
+h1 {
+  color: white;
+}
+
+.white-text {
+  color: white;
+}
+
+.black-button {
+  color: white;
+  background-color: #4e1539;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.black-button:hover {
+  color: red;
+
 }
