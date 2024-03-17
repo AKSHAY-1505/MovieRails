@@ -8,6 +8,13 @@ Rails.application.routes.draw do
 
   delete "/delete/:id" => "movies#destroy"
 
+  get "/show/:id" => "movies#show"
+  post "/review/:id" => "reviews#create"
+
+  get "/list/index" => "lists#index"
+  post "/list/create" => "lists#create"
+  post "/list/add/:movie_id" => "lists#add"
+
   get "/edit/:id" => "movies#edit"
   patch "/update/:id" => "movies#update"
 

@@ -1,0 +1,28 @@
+<h1> Your Lists </h1>
+
+<div class="container-fluid d-flex">
+    <% @my_lists.each do |list| %>
+        <div class="list-container">
+            <h4><%= list.name %></h4>
+            <ul>
+                <% list.movies.each do |movie| %>
+                    <li><%= movie.name %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>
+<hr />
+<div class="center-container">
+    <%= form_with model: @list, method: :post, url: "/list/create",class: "my-form" do |form| %>
+        <h1>Create a new List</h1>
+        <div class="input-container">
+            <%= form.label :name, "List Name:" %>
+            <%= form.text_field :name %>
+        </div>
+
+        <div class="input-container">
+            <%= form.submit "Create",class: "btn btn-success",style: "color:black;" %>
+        </div>
+    <% end %>
+</div>

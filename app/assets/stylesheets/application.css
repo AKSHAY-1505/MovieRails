@@ -45,6 +45,20 @@ body {
   color: white;
 }
 
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;  
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  color: white;
+}
+
 .center-container {
   display: flex;
   flex-direction: row;
@@ -62,10 +76,15 @@ body {
 
 .my-form {
   border: 0;
+  padding: 5px;
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.2);
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   width: 25vw;
+}
+
+.my-form select,option {
+  color: black;
 }
 
 .input-container {
@@ -75,7 +94,29 @@ body {
   margin: 15px;
 }
 
-.input-container input {
+.review-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;  
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  color: white;
+}
+
+.reviews {
+  display: flex;
+}
+
+hr {
+  color: white;
+}
+
+.input-container input,textarea {
   color: black;
 }
 
@@ -104,9 +145,13 @@ label {
   color: white;
 }
 
+
 .movie-container img {
-  width: 100%;
+  height: 200px;
+  width: 150px;
 }
+
+
 
 .main-container {
   display: flex;

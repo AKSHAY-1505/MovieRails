@@ -37,6 +37,9 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <% if user_signed_in? %>
               <li class="nav-item">
+                <%= link_to "My Lists", "/list/index", method: :get, class: "nav-link active navbar-item" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to edit_user_registration_path, class: "nav-link active navbar-item" do %>
                   <i class="bi bi-person-circle"></i> My Profile
                 <% end %>

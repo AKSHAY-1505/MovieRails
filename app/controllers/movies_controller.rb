@@ -7,12 +7,18 @@ class MoviesController < ApplicationController
         @movie = Movie.new
     end
 
+    def show
+        @movie = Movie.find(params[:id])
+        @review = Review.new
+        @reviews = Review.where(movie_id:@movie.id)
+    end
+
     def create
         @movie = Movie.new(akshay_params)
         if @movie.save
-            redirect_to "/"
+            redirect_to "/" , flash: { alert: "Movie Added Successfully" }
         else 
-            redirect_to "/about"
+            redirect_to "/" , flash: { alert: "Error! Unable to add Movie" }
         end
     end
 
@@ -26,16 +32,16 @@ class MoviesController < ApplicationController
     def update
         @movie = Movie.find(params[:id])
         if @movie.update(akshay_params)
-            redirect_to "/"
+            redirect_to "/" , flash: { alert: "Movie Updated Successfully" }
         else    
-            redirect_to "/edit/#{params[:id]}"
+            redirect_to "/edit/#{params[:id]}" , flash: { alert: "Error! Unable to Update Movie" }
         end
     end
 
     def destroy
         @movie = Movie.find(params[:id])
         @movie.destroy
-        redirect_to "/"
+        redirect_to "/" , flash: { alert: "Movie Deleted Successfully" }
     end
 
     def akshay_params

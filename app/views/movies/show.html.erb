@@ -1,0 +1,57 @@
+<div class="center-container">
+    <div class="movie-container me-5">
+        <%= image_tag @movie.cover,height:200,width:150 %>
+        <h1><%= @movie.name %></h1>
+        <h3>Director: <%= @movie.director %></h1>
+        <h4>Cast: <%= @movie.cast %></h1>
+        <h6>Language: <%= @movie.language %></h1>
+    </div>
+    
+    <% if user_signed_in? %>
+        <%= form_with model: @review, method: :post, url: "/review/#{@movie.id}",class: "my-form me-5" do |form| %>
+            <h1>Write a Review</h1>
+            <div class="input-container">
+                <%= form.label :title, "Review Title:" %>
+                <%= form.text_field :title %>
+            </div>
+            <div class="input-container">
+                <%= form.label :body, "Review:" %>
+                <%= form.text_area :body %>
+            </div>
+
+            <div class="input-container">
+                <%= form.submit "Submit Review",class: "btn btn-success",style: "color:black;" %>
+            </div>
+        <% end %>
+
+        <%= form_with method: :post, url: "/list/add/#{@movie.id}",class: "my-form" do |form| %>
+            <h1>Add To List</h1>
+
+            <div class="input-container">
+                <%= form.label :list, "Select List:" %>
+                <select name="lists">
+                    <% current_user.lists.each do |list| %>
+                        <option value="<%= list.id %>"> <%= list.name %> </option>
+                    <% end %>
+                </select>
+            </div>
+
+            <div class="input-container">
+                <%= form.submit "Add To List",class: "btn btn-success",style: "color:black;" %>
+            </div>
+        <% end %>
+    <% end %>
+    
+</div>
+
+<br>
+<h1> Reviews </h1>
+<div class="reviews">
+    <% @reviews.each do |review| %>
+        <div class="review-container">
+            <h2>Title: <%= review.title %></h2>
+            <h4>Body: <%= review.body %></h4>
+            <p>Review By: <%= review.user.email %></p>
+        </div>
+    <% end %>
+</div>
