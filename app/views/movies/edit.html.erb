@@ -1,8 +1,4 @@
-<html>
-     <head>
-        <%= stylesheet_link_tag 'forms', media: 'all' %>
-     </head>
-     <body>
+
         <h1>Edit Movie</h1>
         <div class="form-container">
             <%= form_with model: @movie, method: :patch, url: "/update/#{@movie.id}",class: "my-form" do |form| %>
@@ -35,5 +31,3 @@
                 </div>
             <% end %>
         </div>
-     </body>
-</html>
