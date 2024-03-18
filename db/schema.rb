@@ -24,7 +24,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_18_064611) do
     t.integer "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["list_id", "movie_id"], name: "index_lists_movies_on_list_id_and_movie_id", unique: true
     t.index ["list_id"], name: "index_lists_movies_on_list_id"
     t.index ["movie_id"], name: "index_lists_movies_on_movie_id"
   end

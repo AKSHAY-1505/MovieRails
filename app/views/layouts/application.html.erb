@@ -27,9 +27,13 @@
             <li class="nav-item">
               <a class="nav-link active navbar-item" aria-current="page" href="/">Home</a>
             </li>
+
+            <% if user_signed_in? and current_user.email == "root@movierails.com" %>
             <li class="nav-item">
               <a class="nav-link active navbar-item" aria-current="page" href="/add">Add a Movie</a>
             </li>
+            <% end %>
+
             <li class="nav-item">
               <a class="nav-link active navbar-item" aria-current="page" href="/about">About Us</a>
             </li> 
