@@ -1,5 +1,6 @@
 class List < ApplicationRecord
   belongs_to :user
 
-  has_and_belongs_to_many :movies
+  has_many :movie_lists
+  has_many :movies , through: :movie_lists
 end

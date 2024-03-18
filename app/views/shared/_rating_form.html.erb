@@ -1,0 +1,19 @@
+<%= form_with url:"/add",method:"Post",class: "my-form" do |form| %>
+    <h1> Rating: </h1>
+    <%= form.radio_button :rating , 1 %>
+    <%= form.label :rating_1, "☆" %><br />
+    
+    <%= form.radio_button :rating , 2 %>
+    <%= form.label :rating_2, "☆☆" %><br />
+    
+    <%= form.radio_button :rating , 3 %>
+    <%= form.label :rating_3, "☆☆☆" %><br />
+    
+    <%= form.radio_button :rating , 4 %>
+    <%= form.label :rating_4, "☆☆☆☆" %><br />
+    
+    <%= form.radio_button :rating , 5 %>
+    <%= form.label :rating_5, "☆☆☆☆☆" %><br />
+    
+    <%= form.submit "Submit Rating",class: "btn btn-success" %>
+<% end %>

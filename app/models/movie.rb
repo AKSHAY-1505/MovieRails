@@ -6,5 +6,8 @@ class Movie < ApplicationRecord
     validates :cover, presence: true
 
     has_many :reviews
-    has_and_belongs_to_many :lists
+
+    has_many :movie_lists
+    has_many :lists , through: :movie_lists
+
 end

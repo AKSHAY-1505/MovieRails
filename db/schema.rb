@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_17_154341) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_18_064611) do
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
@@ -24,8 +24,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_17_154341) do
     t.integer "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["list_id", "movie_id"], name: "index_lists_movies_on_list_id_and_movie_id", unique: true
     t.index ["list_id"], name: "index_lists_movies_on_list_id"
     t.index ["movie_id"], name: "index_lists_movies_on_movie_id"
+  end
+
+  create_table "movie_lists", force: :cascade do |t|
+    t.integer "movie_id", null: false
+    t.integer "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_movie_lists_on_list_id"
+    t.index ["movie_id"], name: "index_movie_lists_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -64,6 +74,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_17_154341) do
   add_foreign_key "lists", "users"
   add_foreign_key "lists_movies", "lists"
   add_foreign_key "lists_movies", "movies"
+  add_foreign_key "movie_lists", "lists"
+  add_foreign_key "movie_lists", "movies"
   add_foreign_key "reviews", "movies"
   add_foreign_key "reviews", "users"
 end
