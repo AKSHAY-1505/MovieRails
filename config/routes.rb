@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   delete "/delete/:id" => "movies#destroy" , as: :delete_movie
 
-  get "/show/:id" => "movies#show"
+  get "/show/:id" => "movies#show" , as: :show_movie
   post "/review/:id" => "reviews#create" , as: :review_movie
 
   get "/list/index" => "lists#index" , as: :my_list

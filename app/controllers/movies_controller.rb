@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+    before_action :is_root , only: [:edit,:create,:add,:update,:destroy]
     def index
         @movies = Movie.all
     end
@@ -16,9 +17,9 @@ class MoviesController < ApplicationController
     def create
         @movie = Movie.new(akshay_params)
         if @movie.save
-            redirect_to "/" , flash: { alert: "Movie Added Successfully" }
+            redirect_to root_path , flash: { alert: "Movie Added Successfully" }
         else 
-            redirect_to "/" , flash: { alert: "Error! Unable to add Movie" }
+            redirect_to root_path , flash: { alert: "Error! Unable to add Movie" }
         end
     end
 
@@ -32,16 +33,16 @@ class MoviesController < ApplicationController
     def update
         @movie = Movie.find(params[:id])
         if @movie.update(akshay_params)
-            redirect_to "/" , flash: { alert: "Movie Updated Successfully" }
+            redirect_to root_path , flash: { alert: "Movie Updated Successfully" }
         else    
-            redirect_to "/edit/#{params[:id]}" , flash: { alert: "Error! Unable to Update Movie" }
+            redirect_to edit_movie_path(@movie) , flash: { alert: "Error! Unable to Update Movie" }
         end
     end
 
     def destroy
         @movie = Movie.find(params[:id])
         @movie.destroy
-        redirect_to "/" , flash: { alert: "Movie Deleted Successfully" }
+        redirect_to root_path , flash: { alert: "Movie Deleted Successfully" }
     end
 
     def akshay_params
