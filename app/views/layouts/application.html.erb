@@ -18,30 +18,36 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style = "background-color: black;">
       <div class="container-fluid">
-        <a class="navbar-brand navbar-item" href="/"><i class="bi bi-film mx-1"></i>MovieRails</a>
+        <%= link_to root_path, class: 'navbar-brand navbar-item' do %>
+          <i class="bi bi-film mx-1"></i>MovieRails
+        <% end %>
+        <!-- <a class="navbar-brand navbar-item" href="/"><i class="bi bi-film mx-1"></i>MovieRails</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active navbar-item" aria-current="page" href="/">Home</a>
+            <%= link_to "Home",root_path,class: "nav-link active navbar-item" %>
+              <!-- <a class="nav-link active navbar-item" aria-current="page" href="/">Home</a> -->
             </li>
 
             <% if user_signed_in? and current_user.email == "root@movierails.com" %>
             <li class="nav-item">
-              <a class="nav-link active navbar-item" aria-current="page" href="/add">Add a Movie</a>
+              <%= link_to "Add a Movie",add_movie_path,class: "nav-link active navbar-item" %>
+              <!-- <a class="nav-link active navbar-item" aria-current="page" href="/add">Add a Movie</a> -->
             </li>
             <% end %>
 
             <li class="nav-item">
-              <a class="nav-link active navbar-item" aria-current="page" href="/about">About Us</a>
+              <%= link_to "About Us",about_us_path,class: "nav-link active navbar-item" %>
+              <!-- <a class="nav-link active navbar-item" aria-current="page" href="/about">About Us</a> -->
             </li> 
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to "My Lists", "/list/index", method: :get, class: "nav-link active navbar-item" %>
+                <%= link_to "My Lists", my_list_path , method: :get, class: "nav-link active navbar-item" %>
               </li>
               <li class="nav-item">
                 <%= link_to edit_user_registration_path, class: "nav-link active navbar-item" do %>

@@ -5,9 +5,9 @@ class Movie < ApplicationRecord
     validates :language, presence: true
     validates :cover, presence: true
 
-    has_many :reviews
+    has_many :reviews , dependent: :destroy
 
-    has_many :movie_lists
+    has_many :movie_lists , dependent: :destroy
     has_many :lists , through: :movie_lists
 
 end

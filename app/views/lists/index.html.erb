@@ -14,7 +14,7 @@
 </div>
 <hr />
 <div class="center-container">
-    <%= form_with model: @list, method: :post, url: "/list/create",class: "my-form" do |form| %>
+    <%= form_with model: @list, method: :post, url: create_list_path ,class: "my-form" do |form| %>
         <h1>Create a new List</h1>
         <div class="input-container">
             <%= form.label :name, "List Name:" %>

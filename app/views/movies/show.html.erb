@@ -8,7 +8,7 @@
     </div>
     
     <% if user_signed_in? %>
-        <%= form_with model: @review, method: :post, url: "/review/#{@movie.id}",class: "my-form me-5" do |form| %>
+        <%= form_with model: @review, method: :post, url: review_movie_path(@movie),class: "my-form me-5" do |form| %>
             <h1>Write a Review</h1>
             <div class="input-container">
                 <%= form.label :title, "Review Title:" %>
@@ -24,7 +24,7 @@
             </div>
         <% end %>
 
-        <%= form_with method: :post, url: "/list/add/#{@movie.id}",class: "my-form" do |form| %>
+        <%= form_with method: :post, url: add_to_list_path(@movie),class: "my-form" do |form| %>
             <h1>Add To List</h1>
 
             <div class="input-container">

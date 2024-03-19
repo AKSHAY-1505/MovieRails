@@ -1,7 +1,7 @@
 
         <h1>Edit Movie</h1>
         <div class="form-container">
-            <%= form_with model: @movie, method: :patch, url: "/update/#{@movie.id}",class: "my-form" do |form| %>
+            <%= form_with model: @movie, method: :patch, url: update_movie_path(@movie),class: "my-form" do |form| %>
                 <div class="input-container">
                     <%= form.label :name, "Movie Name:" %>
                     <%= form.text_field :name %>

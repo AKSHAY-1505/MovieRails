@@ -15,8 +15,8 @@
                 <p><strong>Language: </strong><%= movie.language %></p>
                 
                 <% if user_signed_in? and current_user.email == "root@movierails.com" %>
-                  <%= button_to "Delete","/delete/#{movie.id}",method: :delete,class: "btn btn-danger mb-2" %>
-                  <%= button_to "Edit","/edit/#{movie.id}",method: :get,class: "btn btn-success" %>
+                  <%= button_to "Delete",delete_movie_path(movie),method: :delete,class: "btn btn-danger mb-2" %>
+                  <%= button_to "Edit",edit_movie_path(movie),method: :get,class: "btn btn-success" %>
                 <% end %>
             </div>
         <% end %>
