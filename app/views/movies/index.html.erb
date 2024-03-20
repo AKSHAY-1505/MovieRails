@@ -8,7 +8,9 @@
     <div class="container-fluid main-container">
         <% @movies.each do |movie| %>
             <div class="movie-container">
-                <%= image_tag movie.cover,height:200,width:150 %>
+                <% if movie.cover_photo.attached? %>
+                  <img src="<%= (url_for(movie.cover_photo))%>">
+                <% end %>
                 <h3><%= link_to movie.name, "/show/#{movie.id}", style: "color: white;" %></h3>
                 <p><strong>Director: </strong><%= movie.director %></p>
                 <p><strong>Cast: </strong><%= movie.cast %></p>

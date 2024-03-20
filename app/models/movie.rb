@@ -10,4 +10,6 @@ class Movie < ApplicationRecord
     has_many :movie_lists , dependent: :destroy
     has_many :lists , through: :movie_lists
 
+    has_one_attached :cover_photo
+
 end

@@ -8,27 +8,27 @@
                <%= form_with model:@movie, url: create_movie_path, method:"Post" , class: "my-form" do |form| %>
                     <div class="input-container">
                     <%= form.label :name, "Movie Name:" %>
-                    <%= form.text_field:name %>
+                    <%= form.text_field :name %>
                     </div>
 
                     <div class="input-container">
-                    <%= form.label :name, "Director Name:" %>
-                    <%= form.text_field:director %>
+                    <%= form.label :director, "Director Name:" %>
+                    <%= form.text_field :director %>
                     </div>
                     
                     <div class="input-container">
-                    <%= form.label :name, "Cast Name:" %>
-                    <%= form.text_field:cast %>
+                    <%= form.label :cast, "Cast Name:" %>
+                    <%= form.text_field :cast %>
                     </div>
 
                     <div class="input-container">
-                    <%= form.label :name, "Langauge:" %>
-                    <%= form.text_field:language %>
-                    </div>
+                    <%= form.label :language, "Langauge:" %>
+                    <%= form.text_field :language %>
+                    </div> 
 
                     <div class="input-container">
-                    <%= form.label :name, "Cover URL:" %>
-                    <%= form.text_field:cover %>
+                    <%= form.label :cover_photo, "Cover Photo:" %>
+                    <%= form.file_field :cover_photo %>
                     </div>
 
                     <div class="input-container">
