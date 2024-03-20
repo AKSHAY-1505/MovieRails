@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
-    helper_method :is_root
+    helper_method :root_only
 
     private 
 
-    def is_root
-        if user_signed_in? and current_user.email == "root@movierails.com"
+    def root_only
+        if user_signed_in? && current_user.email == "root@movierails.com"
     
         else
-            redirect_to root_path , flash: {alert: "Not Authorized!"}
+            redirect_to root_path , flash: {danger: "Not Authorized!"}
         end
     end
 end

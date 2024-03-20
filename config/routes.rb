@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   delete "/delete/:id" => "movies#destroy" , as: :delete_movie
+  
 
   get "/show/:id" => "movies#show" , as: :show_movie
   post "/review/:id" => "reviews#create" , as: :review_movie
